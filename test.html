@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="mot1">Mot de passe</label>
+            <input type="text" id="mot1" onblur="afficher();">
+        </div>
+        <div>
+            <label for="mot2">Retaper mot de passe</label>
+            <input type="text" id="mot2" onblur="afficher();">
+        </div>
+    </form>
+</body>
+<script>
+    function afficher() {
+        const recon = document.getElementById('mot1').value;
+        const recon2 = document.getElementById('mot2').value;
+
+        if (recon && recon2) {
+            if (recon === recon2) {
+                alert("Succes")
+            }else {
+                alert("Erreur")
+            }
+        }
+    }
+</script>
+</html>
