@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GAB | Burundi</title>
     <link rel="stylesheet" type="text/css" href="assets/css/index.css?v=1.0">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
 </head>
+
+<main>
     <header>
         <div class="container">
             <nav>
@@ -51,8 +54,57 @@
             </form>
         </div>
     </section>
+    <div class="watsapp">
+        <a class="watsapp" href="https://wa.me/25779909070" target="_blank" rel="noopener noreferrer">
+            <img src="./assets/images/WhatsApp.svg.webp" alt="WhatsApp">
+        </a>
+    </div>
+
+    <div class="weater">
+        <div class="mains">
+            <section class="result">
+                <div class="upper">
+                    <figure class="name">
+                        <figcaption>Burundi</figcaption> 
+                        <img src="https://flagsapi.com/BI/shiny/32.png">
+                    </figure>
+        
+                    <figure class="temperature">
+                        <img src="https://openweathermap.org/img/wn/10d@4x.png">
+                        <figcaption>
+                            <span>31</span>
+                            <sup>o</sup>
+                        </figcaption> 
+                    </figure>
+                    <p class="description">overcast clouds</p>
+                </div>
+                <ul>
+                    <li>
+                        <span class="ups">clouds</span>
+                        <img src="./assets/images/cloud.png" alt="">
+                        <span id="clouds" class="dow">98</span>%
+                    </li>
+                    <li>
+                        <span class="ups">humidity</span>
+                        <img src="./assets/images/humidity.png" alt="">
+                        <span id="humidity" class="dow">98</span>%
+                    </li>
+                    <li>
+                        <span class="ups">pressure</span>
+                        <img src="./assets/images/pression.png" alt="" style="width: 70px;">
+                        <span id="pressure" class="dow">1011</span>hPa
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</main>
 
 
 </body>
+<script src="https://kit.fontawesome.com/a692e1c39f.js" crossorigin="anonymous"></script>
 <script type="module" src="assets/js/index.js"></script>
+<script type="module" src="assets/js/weather.js"></script>
 </html>
+
+<!-- https://codepen.io/gbopola/pen/gOdKqqr -->

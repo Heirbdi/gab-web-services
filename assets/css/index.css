@@ -134,8 +134,7 @@ p {
   border-radius: 0.8rem;
   height: 50vh;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .img_top h1 {
   position: absolute;
@@ -296,10 +295,6 @@ th, td {
   border-radius: 0.5rem;
   padding-left: 1rem;
 }
-.login input:focus {
-  border: 0px solid #ddd;
-  background: none;
-}
 .login .login_btn {
   margin-top: 1.5rem;
   border: 1px solid #000f23;
@@ -328,96 +323,13 @@ th, td {
   font-weight: 600;
   margin-bottom: 2rem;
 }
-th {
-  background: #000f23;
-  color: #fff;
-}
-body {
-  min-height: 93vh;
-}
-select{
-  width: 100%;
-  padding: 10px 15px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 15px;
-}
-
-.ds {
-  display: flex;
-  justify-content: space-around;
-}
-
-.bts{
-  padding: .5rem;
-  background-color: #ff0000;
-  border-radius: .3rem;
-}
-.no_data {
-  padding: 1rem;
-  background-color: #0570ff36;
-  color: #000;
-  font-weight: bold;
-  border-radius: .5rem;
-}
-
-.conta {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.danger{
-  background-color: #dc3545;
-  color: #fff;
-}
-.warning {
-  background-color: #ffc107;
-  color: #000;
-}
-
-.info {
-  background-color: #17a2b8;
-  color: #fff;
-}
-
-.message_text {
-  color: #ff0000;
-}
-
-.dec {
-  border: 1px solid #fff;
-  padding: .5rem 1rem;
-  border-radius: .5rem;
-  transition: .3s;
-}
-
-.dec:hover {
-  background-color: #fff;
-  color: #000f23;
-}
-
-.hed_list {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-}
-
-.hed_list .btn {
-  width: initial;
-  font-size: 1rem;
-  padding: .5rem 1rem;
-  background: #fff;
-}
-
-.flex_d {
-  display: flex;
-  gap: 1rem;
+.login .message_text {
+  color: red;
 }
 
 .form-group {
-display: flex;
-gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .search {
@@ -440,5 +352,122 @@ gap: 1rem;
   max-width: 50%;
   margin: 0 auto;
   padding: 1rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
+}
+
+.watsapp img {
+  width: 50px;
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+}
+
+.mains {
+  width: 90%;
+  margin: 0 auto;
+  height: max-content;
+  min-height: 200px;
+  background-color: #f7f7f7;
+  border-radius: 30px;
+  box-shadow: 0 30px 50px rgba(85, 85, 85, 0.2);
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.mains .result {
+  padding-top: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mains .result .name {
+  font-weight: bold;
+  font-size: large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.mains .temperature img {
+  width: 150px;
+  filter: drop-shadow(0 10px 50px #555);
+}
+
+.mains .temperature figcaption {
+  font-size: 3em;
+}
+
+.mains .description {
+  padding: 10px 0 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.mains ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 70%;
+}
+
+.mains li {
+  background-color: #f78a55;
+  color: #fff;
+  border-radius: 10px;
+  padding: 20px 10px;
+  font-weight: bold;
+  font-size: small;
+}
+
+.mains ul li i {
+  font-size: 2em;
+  margin: 20px 0;
+  display: block !important;
+}
+
+.mains li:nth-child(2) {
+  background-color: #b56291;
+}
+
+.mains li:nth-child(3) {
+  background-color: #48567b;
+}
+
+.mains.error {
+  animation: errorEffect 0.3s linear 1;
+}
+
+@keyframes errorEffect {
+  0% {
+    transform: translate(10px, 5px);
+  }
+  25% {
+    transform: translate(-5px, 0);
+  }
+  50% {
+    transform: translate(8px, 2px);
+  }
+  75% {
+    transform: translate(-2px, 5px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+ul img {
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+ul .ups {
+  margin-bottom: 20px;
+}
+ul .dow {
+  margin-top: 20px;
 }/*# sourceMappingURL=index.css.map */
