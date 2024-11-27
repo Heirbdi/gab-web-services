@@ -1,0 +1,109 @@
+.mains{
+    width: 90%;
+    margin: 0 auto;
+    height: max-content;
+    min-height: 200px;
+    background-color: #f7f7f7;
+    border-radius: 30px;
+    // box-shadow: 0 30px 50px #5553;
+    padding: 30px;
+    box-sizing: border-box;
+}
+.mains .result{
+    padding-top: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.mains .result .name{
+    font-weight: bold;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.mains .temperature img{
+    width: 150px;
+    filter: drop-shadow(0 10px 50px #555);
+}
+.mains .temperature figcaption{
+    font-size: 3em;
+}
+.mains .description{
+    padding: 10px 0 30px;
+    text-align: center;
+    font-weight: bold;
+}
+.mains ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 70%;
+}
+.mains li{
+    background-color: #48567b;
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px 10px;
+    // background-image: linear-gradient(
+    //     to bottom,
+    //     transparent 50%,
+    //     #0003 50%
+    // );
+    font-weight: bold;
+    font-size: small;
+}
+.mains ul li i{
+    font-size: 2em;
+    margin: 20px 0;
+    display: block!important;
+}
+// .mains li:nth-child(2){
+//     background-color: #b56291;
+// }
+// .mains li:nth-child(3){
+//     background-color: #48567b;
+// }
+.mains.error{
+    animation: errorEffect 0.3s linear 1;
+}
+@keyframes errorEffect{
+    0%{
+        transform: translate(10px, 5px)
+    }
+    25%{
+        transform: translate(-5px, 0)
+    }
+    50%{
+        transform: translate(8px, 2px)
+    }
+    75%{
+        transform: translate(-2px, 5px)
+    }
+    100%{
+        transform: translate(0, 0); 
+    }
+}
+
+ul {
+    img {
+        width: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .ups {
+        margin-bottom: 20px;
+        font-size: 1rem;
+    }
+
+    .dow {
+        margin-top: 20px;
+        font-size: 1rem;
+    }
+}

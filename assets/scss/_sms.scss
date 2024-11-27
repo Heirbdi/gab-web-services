@@ -1,0 +1,70 @@
+/* Styles généraux pour centrer la section */
+.sms {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Hauteur de la fenêtre */
+    // background-color: #f5f5f5; /* Couleur de fond légère */
+    margin: 0;
+}
+
+/* Style pour le conteneur du formulaire */
+.sendform {
+    background-color: #fff; /* Fond blanc */
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Effet d'ombre */
+    width: 100%;
+    max-width: 400px; /* Largeur maximale du formulaire */
+}
+
+/* Styles pour les étiquettes */
+label {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #333; /* Couleur du texte */
+}
+
+/* Styles pour les champs d'entrée */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box; /* Inclure padding/border dans la largeur */
+}
+
+/* Styles pour le bouton */
+.button_sms {
+    background-color: #4CAF50; /* Vert */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049; /* Vert légèrement plus foncé */
+}
+
+/* Responsive pour petits écrans */
+@media (max-width: 500px) {
+    .sendform {
+        padding: 15px 20px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
