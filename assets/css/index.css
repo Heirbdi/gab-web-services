@@ -510,7 +510,6 @@ ul .dow {
   }
 }
 body {
-  margin: 2rem 0 0 0;
   background-color: #fff;
   color: var(--dark-color);
   font-family: var(--body-font);
