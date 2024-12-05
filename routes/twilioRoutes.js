@@ -15,16 +15,17 @@ router.post("/send-sms", async (req, res) => {
     }
 
     try {
-        await client.messages.create({
+        const twilioResponse = await client.messages.create({
             body: message,
             from: process.env.TWILIO_PHONE_NUMBER,
             to: phone,
         });
+        console.log("Twilio Response:", twilioResponse); // Log the response from Twilio
         res.status(200).json({ message: "Message envoyé avec succès !" });
     } catch (error) {
+        console.error("Twilio Error:", error.message); // Log the error message
         res.status(500).json({ error: "Erreur lors de l'envoi du message." });
     }
 });
 
 module.exports = router;
-
