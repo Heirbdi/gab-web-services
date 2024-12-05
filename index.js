@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const path = require("path");
-require("dotenv").config(); // Charger les variables d'environnement
+require("dotenv").config();
 
 const stripeRoutes = require("./routes/stripeRoutes");
 
@@ -11,16 +11,17 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname)));
 
-// Routes
+// Servir les fichiers statiques depuis le dossier public
+app.use(express.static(path.join(__dirname, "public")));
+
+// Routes Stripe
 app.use("/api/stripe", stripeRoutes);
 
-// Twilio Configuration
+// Twilio
 const twilio = require("twilio");
 const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 
-// Endpoint Twilio pour envoyer des SMS
 app.post("/api/send-sms", async (req, res) => {
     const { phone, message } = req.body;
 
@@ -36,7 +37,7 @@ app.post("/api/send-sms", async (req, res) => {
     }
 });
 
-// Démarrage du serveur
+// Port
 const PORT = process.env.PORT || 4242;
 app.listen(PORT, () => {
     console.log(`Serveur en écoute sur http://localhost:${PORT}`);
