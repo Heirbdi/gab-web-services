@@ -23,9 +23,10 @@ router.post("/create-checkout-session", async (req, res) => {
             success_url: `${req.headers.origin}/success.html`,
             cancel_url: `${req.headers.origin}/cancel.html`,
         });
-
+        console.log("Stripe Session:", session); // Log the session object
         res.json({ id: session.id });
     } catch (error) {
+        console.error("Stripe Error:", error.message); // Log the error message
         res.status(500).json({ error: error.message });
     }
 });
