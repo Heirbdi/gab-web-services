@@ -1,27 +1,33 @@
 const express = require("express");
+const router = express.Router();
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
-const router = express.Router();
-
-// Route pour créer un paiement
-router.post("/create-payment-intent", async (req, res) => {
-    const { amount, currency } = req.body;
-
-    if (!amount || !currency) {
-        return res.status(400).json({ error: "Le montant et la devise sont requis." });
-    }
-
+// Route pour créer une session de paiement Stripe
+router.post("/create-checkout-session", async (req, res) => {
     try {
-        const paymentIntent = await stripe.paymentIntents.create({
-            amount,
-            currency,
+        const session = await stripe.checkout.sessions.create({
+            payment_method_types: ["card"],
+            mode: "payment",
+            line_items: [
+                {
+                    price_data: {
+                        currency: "usd",
+                        product_data: {
+                            name: "Produit Exemple",
+                        },
+                        unit_amount: 2000, // Montant en cents (20.00 USD)
+                    },
+                    quantity: 1,
+                },
+            ],
+            success_url: `${req.headers.origin}/success.html`,
+            cancel_url: `${req.headers.origin}/cancel.html`,
         });
 
-        res.status(200).json({ clientSecret: paymentIntent.client_secret });
+        res.json({ id: session.id });
     } catch (error) {
-        res.status(500).json({ error: "Erreur lors de la création du paiement." });
+        res.status(500).json({ error: error.message });
     }
 });
 
 module.exports = router;
-
