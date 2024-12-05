@@ -1,1 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Web</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css?v=1.0">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
+    <script src="https://js.stripe.com/v3/"></script>
+
+
+</head>
+
+<main>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.php" style="color: #fff;"><h1>GAB</h1></a>
+                </div>
+                <ul>
+                    <li>
+                        <a href="index.html">Acceuil</a>
+                    </li>
+                        
+                    <li>
+                        <a href="contacts.html">Contacts</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section">
+        <h1 class="titre_principal">Membre&nbsp;du&nbsp;groupe</h1>
+        <div class="container">
+            <ol style="margin-left: 4rem;">
+                <h3><li>Aldo Alex</li></h3>
+                <h3><li>NDIREZE Héritier</li></h3>
+                <h3><li>Dadix</li></h3>
+            </ol>
+        </div>
+    </section>
+
+    <div class="watsapp">
+        <a class="watsapp" href="https://wa.me/25779909070" target="_blank" rel="noopener noreferrer">
+            <img src="./assets/images/WhatsApp.svg.webp" alt="WhatsApp">
+        </a>
+    </div>
+
+    <div class="weater section">
+        <h1 class="titre_principal">Metéo en temps réel</h1>
+        <div class="mains">
+            <section class="result">
+                <div class="upper">
+                    <figure class="name">
+                        <figcaption>Burundi</figcaption> 
+                        <img src="https://flagsapi.com/BI/shiny/32.png">
+                    </figure>
+        
+                    <figure class="temperature">
+                        <img src="https://openweathermap.org/img/wn/10d@4x.png">
+                        <figcaption>
+                            <span>31</span>
+                            <sup>o</sup>
+                        </figcaption> 
+                    </figure>
+                    <p class="description">overcast clouds</p>
+                </div>
+                <ul>
+                    <li>
+                        <span class="ups">Clouds</span>
+                        <img src="./assets/images/cloud.png" alt="">
+                        <span id="clouds" class="dow">98</span>%
+                    </li>
+                    <li>
+                        <span class="ups">Humidity</span>
+                        <img src="./assets/images/humidity.png" alt="">
+                        <span id="humidity" class="dow">98</span>%
+                    </li>
+                    <li>
+                        <span class="ups">Pressure</span>
+                        <img src="./assets/images/pression.png" alt="" style="width: 70px;">
+                        <span id="pressure" class="dow">1011</span>hPa
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <section class="section">
+        <h1 class="titre_principal" style="margin-bottom: 0;">Stripe system</h1>
+        <div class="container">
+            <div class="products">
+                <main class="main bd-grid">
+                    <article class="card">
+                        <div class="card__img">
+                            <img src="assets/images/shirt.png" alt="" style="height: 175px;">
+                        </div>
+                        <div class="card__precis">
+                            <div>
+                                <span class="card_preci card_preci--before">$200.00</span>
+                            </div>
+                            <button id="checkout-button">Buy</button>
+                        </div>
+                    </article>
+        
+                    <article class="card">
+                        <div class="card__img">
+                            <img src="assets/images/shirt2.png" alt="" style="height: 175px;">
+                        </div>
+                        <div class="card__precis">
+                            <div>
+                                <span class="card_preci card_preci--before">$200.00</span>
+                            </div>
+                            <button id="checkout-button">Buy</button>
+                        </div>
+                    </article>
+        
+                    <article class="card">
+                        <div class="card__img">
+                            <img src="assets/images/shirt3.png" alt="" style="height: 175px;">
+                        </div>
+                        <div class="card__precis">
+                            <div>
+                                <span class="card_preci card_preci--before">$200.00</span>
+                            </div>
+                            <button id="checkout-button">Buy</button>
+                        </div>
+                    </article>
+        
+                    <article class="card">
+                        <div class="card__img">
+                            <img src="assets/images/shirt4.png" alt="" style="height: 175px;">
+                        </div>
+                        <div class="card__precis">
+                            <div>
+                                <span class="card_preci card_preci--before">$200.00</span>
+                            </div>
+                            <button id="checkout-button">Buy</button>
+                        </div>
+                    </article>
+                </main>
+            </div>
+    </section>
+
+    <section class="section">
+        <h1 class="titre_principal">Envoi des messages</h1>
+        <div class="sms">
+            <div class="sendform">
+                <form id="smsForm">
+                    <label for="phone">Numéro de téléphone :</label>
+                    <input type="text" id="phone" name="phone" required><br><br>
+            
+                    <label for="message">Message :</label>
+                    <textarea id="message" name="message" required></textarea><br><br>
+            
+                    <button class="button_sms" type="submit">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+</body>
+<script>
+    // const stripe = Stripe('VOTRE_CLE_PUBLIQUE_STRIPE');
+    const stripe = Stripe('pk_test_51QOczzJRqShZcJZ5XhD03gx5SDDvctfvuYX3n509jKByVTSX4eSg7ICLZX7zM2x6GHfJxchjft5zonF2uCGTmd3z009OBqRqIV');
+
+    document.getElementById('checkout-button').addEventListener('click', async () => {
+        const response = await fetch('/create-checkout-session', { method: 'POST' });
+        const session = await response.json();
+
+        // Redirection vers la page de paiement Stripe
+        const { error } = await stripe.redirectToCheckout({ sessionId: session.id });
+        if (error) {
+            console.error(error);
+        }
+    });
+</script>
+
+<script>
+    document.getElementById("smsForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
+    
+        const phone = document.getElementById("phone").value;
+        const message = document.getElementById("message").value;
+    
+        try {
+            const response = await fetch("http://localhost:5000/send-sms", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ phone, message }),
+            });
+    
+            const result = await response.json();
+            alert(result.message || "Message envoyé !");
+        } catch (error) {
+            alert("Erreur : " + error.message);
+        }
+    });
+    </script>
+
+
+<!-- <script>
+    document.getElementById('smsForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const phone = document.getElementById('phone').value;
+        const message = document.getElementById('message').value;
+
+        try {
+            const response = await fetch('http://localhost:4242/send-sms', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ to: phone, message: message }),
+            });
+
+            if (response.ok) {
+                alert('Message envoyé avec succès !');
+                document.getElementById('smsForm').reset(); // Réinitialise le formulaire
+            } else {
+                alert('Erreur lors de l\'envoi du message.');
+            }
+        } catch (error) {
+            console.error(error);
+            alert('Une erreur s\'est produite.');
+        }
+    });
+</script> -->
+
+<script type="module" src="assets/js/index.js"></script>
+<script type="module" src="assets/js/weather.js"></script>
+<!-- <script type="module" src="twilio.js"></script> -->
+</html>
+
+<!-- https://codepen.io/gbopola/pen/gOdKqqr -->
