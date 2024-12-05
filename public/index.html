@@ -182,27 +182,27 @@
 </script>
 
 <script>
-    document.getElementById("smsForm").addEventListener("submit", async function (e) {
-        e.preventDefault();
-    
-        const phone = document.getElementById("phone").value;
-        const message = document.getElementById("message").value;
-    
-        try {
-            const response = await fetch("http://localhost:5000/send-sms", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ phone, message }),
-            });
-    
-            const result = await response.json();
-            alert(result.message || "Message envoyé !");
-        } catch (error) {
-            alert("Erreur : " + error.message);
-        }
-    });
+        document.getElementById("smsForm").addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            const phone = document.getElementById("phone").value;
+            const message = document.getElementById("message").value;
+
+            try {
+                const response = await fetch("/send-sms", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ phone, message }),
+                });
+
+                const result = await response.json();
+                alert(result.message || "Message envoyé avec succès !");
+            } catch (error) {
+                alert("Erreur : " + error.message);
+            }
+        });
     </script>
 
 
