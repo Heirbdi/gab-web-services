@@ -198,7 +198,7 @@
 
             const session = await response.json();
 
-            const stripe = Stripe("pk_test_51QOczzJRqShZcJZ5vQJcbP5A9G958DyDOCJHlfuLEHASu8eXdFEW7cwh9jd5ePdx15JfWvbhOzBOwlTordc8uBbE005dTGGMDr");
+            const stripe = Stripe("pk_test_51QOczzJRqShZcJZ5XhD03gx5SDDvctfvuYX3n509jKByVTSX4eSg7ICLZX7zM2x6GHfJxchjft5zonF2uCGTmd3z009OBqRqIV");
             const { error } = await stripe.redirectToCheckout({ sessionId: session.id });
 
             if (error) {
